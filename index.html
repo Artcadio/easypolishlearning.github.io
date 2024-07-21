@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyPolishLearning</title>
+    <style>
+        body {
+            background-color: #F0F8FF; /* Jaśniejszy odcień niebieskiego */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden; /* Ukrywa poziomy pasek przewijania */
+        }
+
+        .logo-panel {
+            background-color: #FF8C00; /* Kolor panelu */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień na dole */
+            z-index: 2; /* Pierwsza warstwa */
+            width: 100%; /* Pełna szerokość */
+            box-sizing: border-box; /* Uwzględnia padding i border w szerokości */
+        }
+
+        .logo-panel a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Usuwamy podkreślenie linku */
+        }
+
+        .logo-panel img {
+            height: 60px; /* Ustawiamy wysokość, aby zachować proporcje */
+            margin-right: 10px;
+            cursor: pointer; /* Wskaźnik zmienia się na rękę */
+        }
+
+        .logo-panel span {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-container {
+            display: flex; /* Ustawienie kontenera nawigacyjnego jako flexbox */
+            justify-content: center; /* Wyśrodkowanie listwy nawigacyjnej */
+            padding: 0; /* Usunięcie paddingu z góry i dołu */
+            margin: 0; /* Usunięcie marginesu */
+        }
+
+        nav {
+            background-color: #ffeb3b; /* Ciemniejszy żółty */
+            display: flex; /* Ustawienie elementów w jednej linii */
+            justify-content: center; /* Wyśrodkowanie elementów w poziomie */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Cień taki sam jak w górnej listwie */
+            z-index: 1; /* Druga warstwa */
+            position: relative;
+            padding: 0; /* Usunięcie paddingu wewnętrznego */
+            border-radius: 5px; /* Zaokrąglone rogi */
+            width: 100%; /* Szerokość 100% */
+            max-width: 1100px; /* Maksymalna szerokość */
+            box-sizing: border-box; /* Uwzględnia padding i border w szerokości */
+        }
+
+        nav a {
+            background-color: #FFD700; /* Nowy kolor */
+            padding: 15px 30px; /* Padding wewnętrzny */
+            text-decoration: none;
+            color: #333; /* Kolor tekstu */
+            font-weight: bold;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień pod kafelkami */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center; /* Wyśrodkowanie tekstu */
+            margin: 0; /* Usunięcie marginesu między przyciskami */
+        }
+
+        nav a:first-child {
+            margin-left: 20px; /* Odstęp przed pierwszym przyciskiem */
+        }
+
+        nav a:last-child {
+            margin-right: 20px; /* Odstęp po ostatnim przyciskiem */
+        }
+
+        nav a:not(:last-child) {
+            border-right: 2px solid #ffcc80; /* Dodatkowy kolor, aby pokazać granice między kafelkami */
+        }
+
+        nav a:hover {
+            background-color: #191970; /* Ciemny niebieski dla efektu hover */
+            color: #fff; /* Biały kolor tekstu podczas hover */
+        }
+
+        .main-container {
+            background-color: #FFFF66; /* Kolor kontenera */
+            margin: 0 auto; /* Wyśrodkowanie kontenera */
+            padding: 20px; /* Padding wokół zawartości */
+            max-width: 1100px; /* Maksymalna szerokość kontenera */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla kontenera */
+            box-sizing: border-box; /* Uwzględnia padding i border w szerokości */
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 50px;
+            z-index: 0; /* Trzecia warstwa */
+            position: relative;
+        }
+
+        .content input[type="file"] {
+            display: none;
+        }
+
+        .content label {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .content label:hover {
+            background-color: #555;
+        }
+
+        .content img {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ffeb3b;
+        }
+
+        .text-area {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #FF8C00; /* Kolor stopki taki sam jak panel górny */
+            color: #333; /* Kolor tekstu taki sam jak przycisk "Strona główna" */
+            text-align: center;
+            padding: 15px; /* Zwiększony padding */
+            margin-top: 20px; /* Dodany margines górny */
+            position: relative;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo-panel">
+    <a href="index.html"> <!-- Ustawiamy link do strony głównej -->
+        <img src="EPL_logo.png" alt="Logo">
+    </a>
+</div>
+
+<div class="nav-container">
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="Historie/historie.html">Historie</a>
+        <a href="Quiz%20Time/quiz_list.html">Quiz Time</a>
+        <a href="Wymowa/wymowa.html">Wymowa</a>
+    </nav>
+</div>
+
+<div class="main-container">
+    <div class="content">
+        <img id="image-display" src="logo.png" alt="Podgląd zdjęcia">
+        <div class="text-area">
+            Cześć!
+        </div>
+    </div>
+</div>
+
+<footer id="footer">
+    <p></p>
+</footer>
+
+<script>
+    function loadImage(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('image-display');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function updateDateTime() {
+        var now = new Date();
+        var dateTimeString = now.toLocaleString();
+        document.getElementById('footer').innerHTML = '<p>' + dateTimeString + '</p>';
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+</body>
+</html>
